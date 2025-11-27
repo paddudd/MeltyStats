@@ -7,17 +7,19 @@ public class LoadCSV {
         String file = "src\\results.csv";
         BufferedReader reader = null;
         String line = "";
+        int indexCount = 0;
 
         try {
             reader = new BufferedReader(new FileReader(file));
             while ((line = reader.readLine()) != null) {
 
                 String[] row = line.split(",");
+                indexCount++;
 
                 for (String index : row) {
                     System.out.printf("%s ", index);
                 }
-                System.out.println();
+                System.out.println(indexCount);
             }
         } catch (Exception e) {
             e.printStackTrace();
